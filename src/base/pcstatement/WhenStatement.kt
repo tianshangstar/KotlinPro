@@ -38,6 +38,17 @@ fun what1(obj: Any): String =
             else -> "不知道是啥"
         }
 
+fun what2(obj: Any) =
+        when (obj) {
+            1 -> "the obj is 1"
+            2, 3 -> "the obj is 2 or 3"
+            getLongValue() -> "the obj is long value : 15"
+            getString() -> "world"
+            in 20..30 -> "the obj is between 20 and 30"
+            !is String -> "obj is not String"
+            else -> "不知道是啥"
+        }
+
 fun getLongValue(): Long = 15
 
 fun getString() = "hello"
