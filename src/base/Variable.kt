@@ -27,6 +27,9 @@ fun main(args: Array<String>) {
     println("abcdef\naaaa\"\"") // use \
     val price = """$9.99""" // 用3个"来转义
     println(price)
+    val x = parseInt("11a")
+    if (x != null)
+        println(x)
 }
 
 fun sum(a: Int, b: Int): Int { //指定Int返回类型
@@ -43,4 +46,8 @@ fun printSum(a: Int, b: Int): Unit { // Unit = java void
 
 fun printSum1(a: Int, b: Int) { // 返回类型Unit可省略
     println(a + b)
+}
+
+fun parseInt(str: String): Int? { // ? 表示返回值可能为空，在试用对应返回值前需要进行空判断
+    return str.toIntOrNull()
 }
