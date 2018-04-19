@@ -28,8 +28,9 @@ fun main(args: Array<String>) {
     val price = """$9.99""" // 用3个"来转义
     println(price)
     val x = parseInt("11a")
+//    x.dec()  不进行空判断，这里会编译报错
     if (x != null)
-        println(x)
+        println(x.dec())
 }
 
 fun sum(a: Int, b: Int): Int { //指定Int返回类型
