@@ -99,12 +99,19 @@ class Clazz8 {
 
 }
 
+class Clazz9(val lint: Int = 88, var rint: Int = 999) { // 简洁的属性声明以及初始化方式。。。
+    init {
+        print("lint is : $lint ------ rint is : $rint")
+    }
+}
+
 fun main(args: Array<String>) {
     val claz7 = Clazz7("hello kitty xxxxxxxxxxxxxxxxxxxxxx", 19, "男")
 //    claz7.sayHello()
 //    claz7.sayFuck()
 //    claz7.sayHi()
-    claz7.sayAll()
+//    claz7.sayAll()
 //    Clazz8("hello kitty")
 //    Clazz8("hello kitty", 19)
+    val claz9 = Clazz9()
 }
