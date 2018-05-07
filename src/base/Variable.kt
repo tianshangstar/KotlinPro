@@ -3,6 +3,30 @@ package base
 /**
  * Created by evan01.zhang on 2018/4/18.
  */
+
+
+// getter and setter
+val isEmpty: Boolean
+    get() = false
+
+var name: String = "init value"
+    get() = field // kotlin 提供默认属性field
+    set(value) {
+        field = value + "_tail"
+    }
+
+val name1
+    get() = true // getter可推断类型，则可省略
+
+private var _table: Map<String, Int>? = null
+public val table: Map<String, Int>
+    get() {
+        if (_table == null) {
+            _table = HashMap() // 类型参数已推断出
+        }
+        return _table ?: throw AssertionError("Set to null by another thread")
+    }
+
 fun main(args: Array<String>) {
     val a = 9 // val:不可变声明，赋值后不可重新赋值
     val a1: Int = 0 //声明Int类型
@@ -31,6 +55,9 @@ fun main(args: Array<String>) {
 //    x.dec()  不进行空判断，这里会编译报错
     if (x != null)
         println(x.dec())
+
+    name = "zhangjinbao"
+    println(name)
 }
 
 fun sum(a: Int, b: Int): Int { //指定Int返回类型
