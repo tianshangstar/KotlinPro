@@ -3,6 +3,13 @@ package advance.clazz
 /**
  * Created by evan01.zhang on 2018/4/20.
  */
+// 用const来声明编译期常量
+//已知值的属性可以使用 const 修饰符标记为 编译期常量。 这些属性需要满足以下要求：
+//位于顶层或者是 object 的一个成员
+//用 String 或原生类型 值初始化
+//没有自定义 getter
+//这些属性可以用在注解中：
+const val TAG: String = "I'm const tag"
 
 class NotOpenClass// kotlin中，所有的类都默认隐示继承了Any，类似java的Object
 
